@@ -48,9 +48,12 @@
   src: url('/fonts/IranYekan/IRANYekanExtraBlack.ttf') format('truetype');
 }
 
-@theme {
-  --color-*: initial;
+body {
+  min-height: 100vh;
+  background-color: #252525;
+}
 
+@theme {
   /* Primary Colors */
 
   --color-primary-tint-6: #E7F1FF;
@@ -94,6 +97,17 @@
   --color-warning: #A9791C;
   --color-warning-light-1: #F4B740;
 
+  /* Breakpoints */
+
+   --breakpoint-*: initial;
+   --breakpoint-xs: 30rem;
+   --breakpoint-sm: 40rem;
+   --breakpoint-md: 48rem;
+   --breakpoint-lg: 64rem;
+   --breakpoint-xl: 80rem;
+
+  /* Fonts */
+
   --font-IranYekan-Regular: 'IranYekan Regular';
   --font-IranYekan-Medium: 'IranYekan Medium';
   --font-IranYekan-Bold: 'IranYekan Bold';
@@ -102,4 +116,13 @@
   --font-IranYekan-ExtraBlack: 'IranYekan ExtraBlack';
   --font-IranYekan-Thin: 'IranYekan Thin';
   --font-IranYekan-Light: 'IranYekan Light';
+}
+
+@utility container {
+  padding-inline: 0.625rem;
+  margin-inline: auto;
+
+  @media screen and (min-width: 768px) {
+    padding-inline: 1.75rem;
+  }
 }
