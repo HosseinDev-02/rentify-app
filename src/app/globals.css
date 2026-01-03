@@ -1,26 +1,105 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'IranYekan Thin';
+  font-weight: 100;
+  src: url('/fonts/IranYekan/IRANYekanThin.ttf') format('truetype');
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: 'IranYekan Light';
+  font-weight: 200;
+  src: url('/fonts/IranYekan/IRANYekanLight.ttf') format('truetype');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'IranYekan Regular';
+  font-weight: 300;
+  src: url('/fonts/IranYekan/IRANYekanRegular.ttf') format('truetype');
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: 'IranYekan Medium';
+  font-weight: 400;
+  src: url('/fonts/IranYekan/IRANYekanMedium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'IranYekan Bold';
+  font-weight: 500;
+  src: url('/fonts/IranYekan/IRANYekanBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'IranYekan Extrabold';
+  font-weight: 600;
+  src: url('/fonts/IranYekan/IRANYekanExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'IranYekan Black';
+  font-weight: 700;
+  src: url('/fonts/IranYekan/IRANYekanBlack.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'IranYekan ExtraBlack';
+  font-weight: 800;
+  src: url('/fonts/IranYekan/IRANYekanExtraBlack.ttf') format('truetype');
+}
+
+@theme {
+  --color-*: initial;
+
+  /* Primary Colors */
+
+  --color-primary-tint-6: #E7F1FF;
+  --color-primary-tint-5: #CFE2FF;
+  --color-primary-tint-4: #B6D4FE;
+  --color-primary-tint-3: #9EC5FE;
+  --color-primary-tint-2: #6EA8FE;
+  --color-primary-tint-1: #3D8BFD;
+  --color-primary: #0D6EFD;
+  --color-primary-shade-1: #0A58CA;
+  --color-primary-shade-2: #084298;
+  --color-primary-shade-3: #052C65;
+  --color-primary-shade-4: #04214C;
+  --color-primary-shade-5: #031633;
+  --color-primary-shade-6: #010B19;
+
+  /* Neutral Colors */
+
+  --color-neutral-tint-6: #E7E7E7;
+  --color-neutral-tint-5: #B6B6B6;
+  --color-neutral-tint-4: #CECECE;
+  --color-neutral-tint-3: #9E9E9E;
+  --color-neutral-tint-2: #6D6D6D;
+  --color-neutral-tint-1: #3D3D3D;
+  --color-neutral: #0C0C0C;
+  --color-neutral-shade-1: #0A0A0A;
+  --color-neutral-shade-2: #070707;
+  --color-neutral-shade-3: #050505;
+  --color-neutral-shade-4: #040404;
+  --color-neutral-shade-5: #020202;
+  --color-neutral-shade-6: #010101;
+
+  /* Status Colors */
+
+  --color-error: #C30000;
+  --color-error-light-1: #ED2E2E;
+
+  --color-success: #00966D;
+  --color-success-light-1: #00BA88;
+
+  --color-warning: #A9791C;
+  --color-warning-light-1: #F4B740;
+
+  --font-IranYekan-Regular: 'IranYekan Regular';
+  --font-IranYekan-Medium: 'IranYekan Medium';
+  --font-IranYekan-Bold: 'IranYekan Bold';
+  --font-IranYekan-Black: 'IranYekan Black';
+  --font-IranYekan-ExtraBold: 'IranYekan ExtraBold';
+  --font-IranYekan-ExtraBlack: 'IranYekan ExtraBlack';
+  --font-IranYekan-Thin: 'IranYekan Thin';
+  --font-IranYekan-Light: 'IranYekan Light';
 }
