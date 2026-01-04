@@ -8,7 +8,7 @@ import { ArrowLeft, LogInIcon, MoveLeft, TextAlignJustify } from "lucide-react";
 
 export default function Header() {
     return (
-        <header className="mt-10">
+        <header className="fixed left-0 right-0 top-10 z-50">
             {/* container */}
             <div className="container">
                 {/* content wrapper */}

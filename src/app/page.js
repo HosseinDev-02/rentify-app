@@ -1,4 +1,5 @@
 import Header from "@/components/layout/Header";
+import CategoryBox from "@/components/ui/CategoryBox";
 import DropdownMenu from "@/components/ui/buttons/DropdownMenu";
 import DropdownButton from "@/components/ui/buttons/DropdownMenu";
 import SearchIcon from "@/components/ui/icons/SearchIcon";
@@ -8,10 +9,11 @@ export default function Home() {
     return (
         <>
             <Header />
-            {/* Categories */}
-            <section className="categories mt-17">
+            {/* search box */}
+            <section className="relative search-box pt-40 h-170 bg-[#252525] rounded-b-3xl">
+            <div className="absolute inset-0 opacity-5 bg-[url(/images/search-box-bg.jpg)] bg-center bg-cover"></div>
                 <div className="container">
-                    <div className="flex items-center flex-col">
+                    <div className="flex items-center flex-col w-full">
                         {/* title */}
                         <h3 className="font-IranYekan-Bold text-3xl text-white mb-8">
                             در <span className="text-primary">رنتی‌فای</span>{" "}
@@ -22,11 +24,20 @@ export default function Home() {
                             <div className="grid grid-cols-12 h-full w-full">
                                 <div className="grid grid-cols-3 gap-16 py-5 col-span-10 px-10">
                                     {/* location */}
-                                    <DropdownMenu defaultValue='انتخاب کنید' title={"موقعیت مکانی"} />
+                                    <DropdownMenu
+                                        defaultValue="انتخاب کنید"
+                                        title={"موقعیت مکانی"}
+                                    />
                                     {/* property type */}
-                                    <DropdownMenu defaultValue='انتخاب کنید' title="نوع ملک" />
+                                    <DropdownMenu
+                                        defaultValue="انتخاب کنید"
+                                        title="نوع ملک"
+                                    />
                                     {/* contract type */}
-                                    <DropdownMenu defaultValue='انتخاب کنید' title="نوع قرارداد" />
+                                    <DropdownMenu
+                                        defaultValue="انتخاب کنید"
+                                        title="نوع قرارداد"
+                                    />
                                 </div>
                                 {/* search button */}
 
@@ -38,7 +49,31 @@ export default function Home() {
                                 </button>
                             </div>
                         </div>
-                        {/* boxes */}
+                    </div>
+                </div>
+            </section>
+            {/* categories */}
+            <section className="categories -translate-y-3/4">
+                <div className="container">
+                    <div className="grid grid-cols-3 gap-6 w-full">
+                        <CategoryBox
+                            className={"bg-[url(/images/categories/cat-3.png)]"}
+                            href={"#"}
+                            title={"ویلا"}
+                            count={"45"}
+                        />
+                        <CategoryBox
+                            className={"bg-[url(/images/categories/cat-2.png)]"}
+                            href={"#"}
+                            title={"آپارتمان"}
+                            count={"56"}
+                        />
+                        <CategoryBox
+                            className={"bg-[url(/images/categories/cat-1.png)]"}
+                            href={"#"}
+                            title={"خانه ویلایی"}
+                            count={"92"}
+                        />
                     </div>
                 </div>
             </section>

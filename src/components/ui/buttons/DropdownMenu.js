@@ -26,26 +26,30 @@ export default function DropdownMenu(props) {
     const [selectedItem, setSelectedItem] = useState("");
     return (
         <div className="relative w-full">
-            <div>
-                <button
-                    onClick={() => setShow((prevState) => !prevState)}
-                    className={`flex items-center cursor-pointer gap-3 text-[#73767C] ${props.className}`}
-                    type="button"
-                    {...props}
-                >
+            <button
+                onClick={() => setShow((prevState) => !prevState)}
+                className={`text-[#73767C] cursor-pointer ${props.className}`}
+                type="button"
+                {...props}
+            >
+                <div className="flex items-center gap-3">
                     <span>{props.title}</span>
                     <span>
                         <ChevronDown strokeWidth={3} size={12} />
                     </span>
-                </button>
+                </div>
                 <span className="font-IranYekan-Medium text-lg text-primary-shade-4">
                     {selectedItem || props.defaultValue}
                 </span>
-            </div>
+            </button>
             {/* menu */}
             {show && (
-                <div className="absolute left-0 right-0 top-6 bg-white w-full rounded-xl overflow-hidden">
+                <div className="absolute left-0 right-0 top-full bg-white w-full rounded-xl overflow-hidden">
                     <ul className="flex flex-col *:py-3 *:px-4 font-IranYekan-Medium text-sm *:hover:bg-neutral-400 *:transition-colors *:duration-300 *:cursor-pointer">
+                    <li onClick={() => {
+                        setShow(false)
+                        setSelectedItem('انتخاب کنید')
+                    }}>انتخاب کنید</li>
                         {items.map((item) => (
                             <li
                                 onClick={() => {
