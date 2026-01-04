@@ -116,6 +116,11 @@ body {
   --font-IranYekan-ExtraBlack: 'IranYekan ExtraBlack';
   --font-IranYekan-Thin: 'IranYekan Thin';
   --font-IranYekan-Light: 'IranYekan Light';
+
+  /* Font Sizes */
+
+  --text-3xl: 2rem;
+  --text-3xl--line-height: 1.6; 
 }
 
 @utility container {
