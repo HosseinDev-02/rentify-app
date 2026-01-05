@@ -60,4 +60,58 @@ const adsItems = [
     },
 ]
 
-export { menuItems, adsItems }
+const services = [
+    {
+        id: 1,
+        title: 'مشاور املاک هستید؟',
+        desc: 'رنتی فای باعث توسعه کسب و کار بیش از۱۵۰۰ مشاور املاک متخصص شده.شانش تون رو در پیوستن به این مجموعه و توسعه کسب و کارتون امتحان کنید.',
+        href: '#',
+        image: '/images/services/service-2.png',
+        linkTitle: 'مشاهده خدمات'
+    },
+    {
+        id: 2,
+        title: 'مالک هستید؟',
+        desc: 'با چند کلیک ساده ، ملک تون رو به صورت رایگان در رنتی فای آگهی و در سریع ترین زمان ممکن در یک فضای امن معامله کنید. ',
+        href: '#',
+        image: '/images/services/service-1.png',
+        linkTitle: 'ثبت رایگان آگهی'
+    },
+    {
+        id: 3,
+        title: 'خانه مورد علاقه تان را اجاره کنید!',
+        desc: 'با چند کلیک ساده ، ملک تون رو به صورت رایگان در رنتی فای آگهی و در سریع ترین زمان ممکن در یک فضای امن معامله کنید. ',
+        href: '#',
+        image: '/images/services/service-3.png',
+        linkTitle: 'اجاره خانه'
+    },
+]
+
+const workItems = [
+    {
+        id: 1,
+        title: 'جستجو',
+        desc: 'ملک مورد علاقه‌‌ی خود را پیدا کنید',
+        image: '/images/work/search.png'
+    },
+    {
+        id: 2,
+        title: 'برنامه بازدید',
+        desc: 'زمان خود را برای بازدید از ملکتان مشخص کنید ',
+        image: '/images/work/schedule.png'
+    },
+    {
+        id: 3,
+        title: 'بازدید از ملک',
+        desc: 'ملک خود را در زمان مشخص کرده بازدید کنید',
+        image: '/images/work/eye-file-1.png'
+    },
+    {
+        id: 4,
+        title: 'نهایی کردن معامله',
+        desc: 'به کمک مشاورین املاک ما معامله‌ی خود را نهایی کنید',
+        image: '/images/work/pay-money.png'
+    },
+]
+
+export { menuItems, adsItems, services, workItems }
