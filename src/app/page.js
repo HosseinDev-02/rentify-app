@@ -15,28 +15,28 @@ export default function Home() {
                 <div className="container">
                     <div className="flex items-center flex-col w-full">
                         {/* title */}
-                        <h3 className="font-IranYekan-Bold text-3xl text-white mb-8">
+                        <h3 className="font-IranYekan-Bold text-3xl text-white text-center mb-8">
                             در <span className="text-primary">رنتی‌فای</span>{" "}
                             دنبال چه ملکی هستید؟
                         </h3>
                         {/* search filter */}
-                        <div className="bg-white rounded-full w-3xl h-26">
+                        <div className="bg-white rounded-full w-full max-w-3xl h-26 hidden xs:block">
                             <div className="grid grid-cols-12 h-full w-full">
-                                <div className="grid grid-cols-3 gap-16 py-5 col-span-10 px-10">
+                                <div className="grid grid-cols-3 gap-8 md:gap-16 col-span-10 px-5 md:px-10">
                                     {/* location */}
                                     <DropdownMenu
                                         defaultValue="انتخاب کنید"
-                                        title={"موقعیت مکانی"}
+                                        title={"مکانی"}
                                     />
                                     {/* property type */}
                                     <DropdownMenu
                                         defaultValue="انتخاب کنید"
-                                        title="نوع ملک"
+                                        title="ملک"
                                     />
                                     {/* contract type */}
                                     <DropdownMenu
                                         defaultValue="انتخاب کنید"
-                                        title="نوع قرارداد"
+                                        title="قرارداد"
                                     />
                                 </div>
                                 {/* search button */}
@@ -45,7 +45,7 @@ export default function Home() {
                                     <span>
                                         <SearchIcon width={16} height={16} />
                                     </span>
-                                    <span>جستجو</span>
+                                    <span className="hidden md:inline">جستجو</span>
                                 </button>
                             </div>
                         </div>
@@ -53,9 +53,9 @@ export default function Home() {
                 </div>
             </section>
             {/* categories */}
-            <section className="categories -translate-y-3/4">
+            <section className="hidden sm:block categories -translate-y-3/4">
                 <div className="container">
-                    <div className="grid grid-cols-3 gap-6 w-full">
+                    <div className="grid grid-cols-3 gap-4 md:gap-6 w-full">
                         <CategoryBox
                             className={"bg-[url(/images/categories/cat-3.png)]"}
                             href={"#"}
