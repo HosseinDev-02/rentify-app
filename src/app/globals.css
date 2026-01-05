@@ -48,9 +48,15 @@
   src: url('/fonts/IranYekan/IRANYekanExtraBlack.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'IranSansWeb Regular';
+  font-weight: 400;
+  src: url('/fonts/IRANSansWeb_FaNum.ttf') format('truetype');
+}
+
 body {
   min-height: 100vh;
-  /* background-color: #252525; */
+  background-color: #F6F6F6;
 }
 
 @theme {
@@ -116,9 +122,11 @@ body {
   --font-IranYekan-ExtraBlack: 'IranYekan ExtraBlack';
   --font-IranYekan-Thin: 'IranYekan Thin';
   --font-IranYekan-Light: 'IranYekan Light';
+  --font-IranSansWeb-Regular: 'IranSansWeb Regular';
 
   /* Font Sizes */
-
+  --text-2xs: 0.625rem;
+  --text-2xs--line-height: auto;
   --text-3xl: 2rem;
   --text-3xl--line-height: 1.6; 
 }
