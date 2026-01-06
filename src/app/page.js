@@ -1,3 +1,4 @@
+import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import AdvertisementBox from "@/components/ui/AdvertisementBox";
 import CategoryBox from "@/components/ui/CategoryBox";
@@ -188,6 +189,8 @@ export default function Home() {
                     </div>
                 </section>
             </main>
+            {/* footer */}
+            <Footer/>
         </>
     );
 }

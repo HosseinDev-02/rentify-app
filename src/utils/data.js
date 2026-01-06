@@ -114,4 +114,154 @@ const workItems = [
     },
 ]
 
-export { menuItems, adsItems, services, workItems }
+const footerSocials = [
+    {
+        id: 2,
+        image: '/images/social-media/telegram.png',
+        href: '#',
+        title: 'telegram'
+    },
+    {
+        id: 4,
+        image: '/images/social-media/linkedin.png',
+        href: '#',
+        title: 'linkedin'
+    },
+    {
+        id: 1,
+        image: '/images/social-media/facebook.png',
+        href: '#',
+        title: 'facebook'
+    },
+    {
+        id: 3,
+        image: '/images/social-media/instagram.png',
+        href: '#',
+        title: 'instagram'
+    },
+]
+
+const footerLicenses = [
+    {
+        id: 1,
+        image: '/images/footer/amlak.png',
+        title: 'amlak'
+    },
+    {
+        id: 3,
+        image: '/images/footer/samandehi.png',
+        title: 'samandehi'
+    },
+    {
+        id: 2,
+        image: '/images/footer/e-namad.png',
+        title: 'e-namad'
+    },
+]
+
+const footerProductLinks = [
+    {
+        id: 1,
+        title: 'ویژگی ها',
+        href: '#',
+    },
+    {
+        id: 2,
+        title: 'قیمت گذاری',
+        href: '#',
+    },
+    {
+        id: 3,
+        title: 'مطالعات موردی',
+        href: '#',
+    },
+    {
+        id: 4,
+        title: 'بررسی کردن',
+        href: '#',
+    },
+    {
+        id: 5,
+        title: 'قیمت گذاری',
+        href: '#',
+    },
+]
+
+const footerCompanyLinks = [
+    {
+        id: 1,
+        title: 'ارتباط با ما',
+        href: '#',
+    },
+    {
+        id: 2,
+        title: 'وبلاگ',
+        href: '#',
+    },
+    {
+        id: 3,
+        title: 'فرهنگ',
+        href: '#',
+    },
+    {
+        id: 4,
+        title: 'درباره',
+        href: '#',
+    },
+    {
+        id: 5,
+        title: 'وبلاگ',
+        href: '#',
+    },
+]
+
+const footerSupportLinks = [
+    {
+        id: 1,
+        title: 'شروع کردن',
+        href: '#',
+    },
+    {
+        id: 2,
+        title: 'مرکز کمک',
+        href: '#',
+    },
+    {
+        id: 3,
+        title: 'تنظیمات سرور',
+        href: '#',
+    },
+    {
+        id: 4,
+        title: 'گزارش اشکال',
+        href: '#',
+    },
+    {
+        id: 5,
+        title: 'پشتیبانی چت',
+        href: '#',
+    },
+]
+
+const footerContacts = [
+    {
+        id: 1,
+        title: 'rentify@gmail.com',
+        href: '#',
+        icon: 'gmail'
+    },
+    {
+        id: 2,
+        title: '۰۲۱-۴۳۵۳۶۳',
+        href: '#',
+        icon: 'phone'
+    },
+    {
+        id: 3,
+        title: 'تهران - زعفرانیه - پلاک ۱۲',
+        href: '#',
+        icon: 'location'
+    },
+]
+
+export { menuItems, adsItems, services, workItems, footerSocials, footerLicenses, footerProductLinks, footerCompanyLinks, footerSupportLinks, footerContacts }
