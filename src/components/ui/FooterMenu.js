@@ -17,11 +17,11 @@ const setIcon = (icon) => {
 
 export default function FooterMenu({ items, title, children, className }) {
     return (
-        <div className={`text-lg ${className}`}>
-            <h6 className="font-IranYekan-ExtraBold text-primary-shade-1 mb-6">
+        <div className={`md:text-lg ${className}`}>
+            <h6 className="font-IranYekan-ExtraBold text-primary-shade-1 mb-4 md:mb-6">
                 {title}
             </h6>
-            <ul className="flex flex-col gap-3 text-[#73767C]">
+            <ul className="flex flex-col gap-2 md:gap-3 text-[#73767C]">
                 {children || (
                     <>
                         {items.map((item) => {
