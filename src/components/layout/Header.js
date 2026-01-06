@@ -13,8 +13,11 @@ import {
     TextAlignJustify,
     XIcon,
 } from "lucide-react";
+import { usePathname } from "next/navigation";
 
-export default function Header() {
+export default function Header({ className, wrapperClassName }) {
+    const pathname = usePathname();
+    console.log("pathname :", pathname);
     const [scrolled, setScrolled] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
 
@@ -33,15 +36,17 @@ export default function Header() {
             {/* desktop header */}
             <header
                 className={`fixed transition-all left-0 right-0 z-40 ${
-                    scrolled
+                    scrolled && pathname === "/"
                         ? "top-0 bg-white text-black p-4 md:p-6"
                         : "top-6 md:top-10 bg-transparent text-white p-0"
-                }`}
+                } ${className}`}
             >
                 {/* container */}
                 <div className="container">
                     {/* content wrapper */}
-                    <div className={`flex items-center justify-between`}>
+                    <div
+                        className={`flex items-center justify-between ${wrapperClassName}`}
+                    >
                         <div className="flex items-center justify-between md:justify-start w-full md:w-auto gap-4">
                             {/* mobile menu button */}
                             <span
@@ -53,19 +58,34 @@ export default function Header() {
                             {/* header logo */}
                             <div className="flex items-center gap-4">
                                 <Link href={"#"}>
-                                    {scrolled ? (
-                                        <Image
-                                            alt="Rentify Logo"
-                                            width={132}
-                                            height={52}
-                                            src={"/images/logo/dark-logo.png"}
-                                        />
+                                    {pathname === "/" ? (
+                                        <>
+                                            {scrolled ? (
+                                                <Image
+                                                    alt="Rentify Logo"
+                                                    width={132}
+                                                    height={52}
+                                                    src={
+                                                        "/images/logo/dark-logo.png"
+                                                    }
+                                                />
+                                            ) : (
+                                                <Image
+                                                    alt="Rentify Logo"
+                                                    width={132}
+                                                    height={52}
+                                                    src={
+                                                        "/images/logo/light-logo.png"
+                                                    }
+                                                />
+                                            )}
+                                        </>
                                     ) : (
                                         <Image
                                             alt="Rentify Logo"
                                             width={132}
                                             height={52}
-                                            src={"/images/logo/light-logo.png"}
+                                            src={"/images/logo/dark-logo.png"}
                                         />
                                     )}
                                 </Link>
@@ -161,7 +181,8 @@ export default function Header() {
                 </div>
             </div>
             {/* mobile menu cover */}
-            <div onClick={() => setShowMenu(prevState => !prevState)}
+            <div
+                onClick={() => setShowMenu((prevState) => !prevState)}
                 className={`block lg:hidden fixed inset-0 transition-all duration-300 bg-black/60 z-40 ${
                     showMenu ? "visible opacity-100" : "invisible opacity-0"
                 }`}
