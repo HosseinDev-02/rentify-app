@@ -336,6 +336,33 @@ const footerContacts = [
     },
 ];
 
+const searchResults = [
+    {
+        id: 1, 
+        title: 'اجاره آپارتمان در تهرانپارس'
+    },
+    {
+        id: 2, 
+        title: 'اجاره اپارتمان در پیروزی'
+    },
+    {
+        id: 3, 
+        title: 'اجاره اپارتمان در نارمک'
+    },
+    {
+        id: 4, 
+        title: 'اجاره اپارتمان در پاکدشت'
+    },
+    {
+        id: 5, 
+        title: 'اجاره اپارتمان در مجیدیه'
+    },
+    {
+        id: 6, 
+        title: 'اجاره اپارتمان در مجیدیه'
+    },
+]
+
 export {
     menuItems,
     adsItems,
@@ -347,4 +374,5 @@ export {
     footerCompanyLinks,
     footerSupportLinks,
     footerContacts,
+    searchResults
 };

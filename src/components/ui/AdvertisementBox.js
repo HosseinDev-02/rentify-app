@@ -25,7 +25,7 @@ export default function AdvertisementBox({
                     <Heart className="fill-error text-error" size={14} />
                 </span>
                 <Image
-                    className="w-full h-full"
+                    className="w-full h-full object-cover"
                     alt={title}
                     width={288}
                     height={216}

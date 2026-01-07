@@ -36,16 +36,16 @@ export default function Header({ className, wrapperClassName }) {
             {/* desktop header */}
             <header
                 className={`fixed transition-all left-0 right-0 z-40 ${
-                    scrolled && pathname === "/"
-                        ? "top-0 bg-white text-black p-4 md:p-6"
-                        : "top-6 md:top-10 bg-transparent text-white p-0"
+                    scrolled
+                        ? "top-0 bg-white text-black"
+                        : "top-0 md:top-10 bg-transparent text-white"
                 } ${className}`}
             >
                 {/* container */}
                 <div className="container">
                     {/* content wrapper */}
                     <div
-                        className={`flex items-center justify-between ${wrapperClassName}`}
+                        className={`flex items-center justify-between p-4 md:p-6 ${wrapperClassName}`}
                     >
                         <div className="flex items-center justify-between md:justify-start w-full md:w-auto gap-4">
                             {/* mobile menu button */}
