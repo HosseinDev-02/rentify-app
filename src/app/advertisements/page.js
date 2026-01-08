@@ -3,6 +3,8 @@ import Header from "@/components/layout/Header";
 import AdvertisementBox from "@/components/ui/AdvertisementBox";
 import Checkbox from "@/components/ui/Checkbox";
 import PrimaryButton from "@/components/ui/buttons/PrimaryButton";
+import CityFilter from "@/components/ui/filtering/CityFilter";
+import TypeLandFIlter from "@/components/ui/filtering/TypeLandFIlter";
 import { adsItems, searchResults } from "@/utils/data";
 import { landTypes } from "@/utils/filters";
 import { Check, ChevronDown, Funnel, Search, XIcon } from "lucide-react";
@@ -10,21 +12,12 @@ import React, { useState } from "react";
 
 export default function Advertisements() {
     const [showFilters, setShowFilters] = useState([]);
-    const [selectedLandType, setSelectedLandType] = useState([]);
 
     const toggleShowFilters = (type) => {
         setShowFilters((prev) =>
             prev.includes(type)
                 ? prev.filter((item) => item !== type)
                 : [...prev, type]
-        );
-    };
-
-    const landTypeToggle = (id, checked) => {
-        console.log("checked", checked);
-        console.log("id", id);
-        setSelectedLandType((prev) =>
-            checked ? [...prev, id] : prev.filter((item) => item !== id)
         );
     };
 
@@ -132,72 +125,18 @@ export default function Advertisements() {
                     {/* filtering items wrapper */}
                     <div className="divide-y divide-[#D7D8DA]">
                         {/* land type */}
-                        <div className="px-6 py-5">
-                            {/* land type filter button */}
-                            <button
-                                onClick={() => toggleShowFilters("landType")}
-                                className="text-sm font-IranYekan-Medium flex items-center justify-between w-full cursor-pointer"
-                            >
-                                <span>نوع ملک</span>
-                                <span className="flex items-center justify-center w-6 h-6">
-                                    <ChevronDown size={16} strokeWidth={3} />
-                                </span>
-                            </button>
-                            {/* land type filter content */}
-                            <div
-                                className={`flex flex-col justify-end gap-3 overflow-hidden transition-all duration-300 ease-in-out ${
-                                    showFilters.includes("landType")
-                                        ? "max-h-60 opacity-100 pt-6"
-                                        : "max-h-0 opacity-0 pt-0"
-                                }`}
-                            >
-                                {landTypes.map((item) => (
-                                    <Checkbox
-                                        onChange={(c) =>
-                                            landTypeToggle(item.id, c)
-                                        }
-                                        key={item.id}
-                                        label={item.title}
-                                        checked={selectedLandType.includes(
-                                            item.id
-                                        )}
-                                    />
-                                ))}
-                            </div>
+                        <div className="px-6">
+                            <TypeLandFIlter
+                                isOpen={showFilters.includes("landType")}
+                                handler={() => toggleShowFilters("landType")}
+                            />
                         </div>
-                        {/* land type */}
-                        <div className="px-6 py-5">
-                            {/* land type filter button */}
-                            <button
-                                onClick={() => toggleShowFilters("landType")}
-                                className="text-sm font-IranYekan-Medium flex items-center justify-between w-full cursor-pointer"
-                            >
-                                <span>نوع ملک</span>
-                                <span className="flex items-center justify-center w-6 h-6">
-                                    <ChevronDown size={16} strokeWidth={3} />
-                                </span>
-                            </button>
-                            {/* land type filter content */}
-                            <div
-                                className={`flex flex-col justify-end gap-3 overflow-hidden transition-all duration-300 ease-in-out ${
-                                    showFilters.includes("landType")
-                                        ? "max-h-60 opacity-100 pt-6"
-                                        : "max-h-0 opacity-0 pt-0"
-                                }`}
-                            >
-                                {landTypes.map((item) => (
-                                    <Checkbox
-                                        onChange={(c) =>
-                                            landTypeToggle(item.id, c)
-                                        }
-                                        key={item.id}
-                                        label={item.title}
-                                        checked={selectedLandType.includes(
-                                            item.id
-                                        )}
-                                    />
-                                ))}
-                            </div>
+                        {/* city */}
+                        <div className="px-6 pb-5">
+                            <CityFilter
+                                isOpen={showFilters.includes("city")}
+                                handler={() => toggleShowFilters("city")}
+                            />
                         </div>
                     </div>
                 </div>
