@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import DropdownButton from "../DropdownButton";
 import Checkbox from "../Checkbox";
 import { landTypes } from "@/utils/filters";
+import FilterItemWrapper from "./FilterItemWrapper";
 
-export default function TypeLandFIlter({isOpen, handler}) {
+export default function TypeLandFIlter({ isOpen, handler }) {
     const [selectedLandType, setSelectedLandType] = useState([]);
 
     const landTypeToggle = (id, checked) => {
@@ -15,24 +16,8 @@ export default function TypeLandFIlter({isOpen, handler}) {
         );
     };
     return (
-        <div>
-            {/* land type filter button */}
-
-            <DropdownButton
-                title="نوع ملک"
-                handler={handler}
-                isOpen={isOpen}
-                className=""
-            />
-
-            {/* land type filter content */}
-            <div
-                className={`flex flex-col justify-end gap-3 overflow-hidden transition-all duration-300 ease-in-out ${
-                    isOpen
-                        ? "max-h-60 opacity-100 py-6"
-                        : "max-h-0 opacity-0 py-0"
-                }`}
-            >
+        <FilterItemWrapper title={"نوع ملک"} isOpen={isOpen} handler={handler}>
+            <div className="flex flex-col gap-3 justify-end">
                 {landTypes.map((item) => (
                     <Checkbox
                         onChange={(c) => landTypeToggle(item.id, c)}
@@ -42,6 +27,6 @@ export default function TypeLandFIlter({isOpen, handler}) {
                     />
                 ))}
             </div>
-        </div>
+        </FilterItemWrapper>
     );
 }

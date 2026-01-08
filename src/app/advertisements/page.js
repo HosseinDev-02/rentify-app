@@ -4,6 +4,7 @@ import AdvertisementBox from "@/components/ui/AdvertisementBox";
 import Checkbox from "@/components/ui/Checkbox";
 import PrimaryButton from "@/components/ui/buttons/PrimaryButton";
 import CityFilter from "@/components/ui/filtering/CityFilter";
+import MortgageFilter from "@/components/ui/filtering/MortgageFilter";
 import TypeLandFIlter from "@/components/ui/filtering/TypeLandFIlter";
 import { adsItems, searchResults } from "@/utils/data";
 import { landTypes } from "@/utils/filters";
@@ -125,19 +126,20 @@ export default function Advertisements() {
                     {/* filtering items wrapper */}
                     <div className="divide-y divide-[#D7D8DA]">
                         {/* land type */}
-                        <div className="px-6">
-                            <TypeLandFIlter
-                                isOpen={showFilters.includes("landType")}
-                                handler={() => toggleShowFilters("landType")}
-                            />
-                        </div>
+                        <TypeLandFIlter
+                            isOpen={showFilters.includes("landType")}
+                            handler={() => toggleShowFilters("landType")}
+                        />
                         {/* city */}
-                        <div className="px-6 pb-5">
-                            <CityFilter
-                                isOpen={showFilters.includes("city")}
-                                handler={() => toggleShowFilters("city")}
-                            />
-                        </div>
+                        <CityFilter
+                            isOpen={showFilters.includes("city")}
+                            handler={() => toggleShowFilters("city")}
+                        />
+                        {/* mortgage */}
+                        <MortgageFilter
+                            isOpen={showFilters.includes("mortgage")}
+                            handler={() => toggleShowFilters("mortgage")}
+                        />
                     </div>
                 </div>
             </div>
