@@ -3,8 +3,12 @@ import Header from "@/components/layout/Header";
 import AdvertisementBox from "@/components/ui/AdvertisementBox";
 import Checkbox from "@/components/ui/Checkbox";
 import PrimaryButton from "@/components/ui/buttons/PrimaryButton";
+import BedroomCountFIlter from "@/components/ui/filtering/BedroomCountFIlter";
 import CityFilter from "@/components/ui/filtering/CityFilter";
+import FilterProvider from "@/components/ui/filtering/FilterProvider";
+import FilteringWrapper from "@/components/ui/filtering/FilteringWrapper";
 import MortgageFilter from "@/components/ui/filtering/MortgageFilter";
+import RentFilter from "@/components/ui/filtering/RentFilter";
 import TypeLandFIlter from "@/components/ui/filtering/TypeLandFIlter";
 import { adsItems, searchResults } from "@/utils/data";
 import { landTypes } from "@/utils/filters";
@@ -12,16 +16,6 @@ import { Check, ChevronDown, Funnel, Search, XIcon } from "lucide-react";
 import React, { useState } from "react";
 
 export default function Advertisements() {
-    const [showFilters, setShowFilters] = useState([]);
-
-    const toggleShowFilters = (type) => {
-        setShowFilters((prev) =>
-            prev.includes(type)
-                ? prev.filter((item) => item !== type)
-                : [...prev, type]
-        );
-    };
-
     return (
         <>
             <Header
@@ -33,10 +27,11 @@ export default function Advertisements() {
                 <div className="py-4 bg-white flex items-center">
                     <div className="container">
                         <div className="inline-flex items-center gap-4">
-                            <button className="border border-[#D7D8DA] flex items-center justify-center gap-1 rounded-full py-2 px-3 text-sm text-primary">
+                            {/* <button className="border border-[#D7D8DA] flex items-center justify-center gap-1 rounded-full py-2 px-3 text-sm text-primary">
                                 <Funnel size={20} />
                                 <span>فیلترها</span>
-                            </button>
+                            </button> */}
+                            <FilterProvider/>
                             <span className="block w-px h-10 bg-[#D7D8DA]"></span>
                             <button className="bg-primary-tint-6 flex items-center justify-center gap-1 rounded-full py-2 px-3 text-sm text-primary">
                                 <span>آپارتمان</span>
@@ -111,38 +106,7 @@ export default function Advertisements() {
                 </div>
             </main>
             {/* advertisements filtering wrapper */}
-            <div className="fixed inset-0 flex items-center justify-center bg-black/60 z-100">
-                {/* filtering wrapper */}
-                <div className="rounded-xl bg-white w-150 min-h-160">
-                    {/* filtering header */}
-                    <div className="flex items-center justify-between px-6 py-4 border-b border-b-[#D7D8DA]">
-                        <h6 className="text-lg font-IranYekan-ExtraBold">
-                            فیلترها
-                        </h6>
-                        <span>
-                            <XIcon size={24} />
-                        </span>
-                    </div>
-                    {/* filtering items wrapper */}
-                    <div className="divide-y divide-[#D7D8DA]">
-                        {/* land type */}
-                        <TypeLandFIlter
-                            isOpen={showFilters.includes("landType")}
-                            handler={() => toggleShowFilters("landType")}
-                        />
-                        {/* city */}
-                        <CityFilter
-                            isOpen={showFilters.includes("city")}
-                            handler={() => toggleShowFilters("city")}
-                        />
-                        {/* mortgage */}
-                        <MortgageFilter
-                            isOpen={showFilters.includes("mortgage")}
-                            handler={() => toggleShowFilters("mortgage")}
-                        />
-                    </div>
-                </div>
-            </div>
+            {/* <FilteringWrapper /> */}
         </>
     );
 }
