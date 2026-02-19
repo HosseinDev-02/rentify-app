@@ -48,7 +48,7 @@ export default function Advertisements() {
                                 رهن و اجاره آپارتمان در تهران
                             </h3>
                             <div className="">
-                                <ul className="font-IranYekan-Medium *:pb-2.5 text-[#73767C] text-lg inline-flex items-center gap-4 border-b border-b-[#D7D8DA]">
+                                <ul className="font-IranYekan-Medium *:pb-2.5 text-[#73767C] text-lg inline-flex items-center gap-4 border-b border-b-[#D7D8DA] *:cursor-pointer">
                                     <li className="relative text-primary before:absolute before:left-0 before:right-0 before:bottom-0 before:w-full before:h-0.75 before:rounded-t-full before:bg-primary">
                                         بروزترین
                                     </li>

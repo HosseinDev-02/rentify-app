@@ -5,7 +5,6 @@ import { FilterContext } from "./FilterProvider";
 
 export default function FilterToggleButton() {
     const { setOpen } = useContext(FilterContext);
-    console.log("open :", open);
     return (
         <button
             onClick={() => setOpen((prevState) => !prevState)}

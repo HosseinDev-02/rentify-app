@@ -108,7 +108,7 @@ export default function Header({ className, wrapperClassName }) {
                         <div className="hidden md:flex items-center gap-2">
                             <Link
                                 className="flex items-center justify-center h-13 rounded-lg lg:px-2"
-                                href={"#"}
+                                href={"/login"}
                             >
                                 <span className="hidden lg:inline">
                                     ورود | ثبت نام
