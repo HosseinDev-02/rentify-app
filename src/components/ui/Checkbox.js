@@ -2,7 +2,7 @@
 import { Check } from "lucide-react";
 import React, { useId } from "react";
 
-export default function Checkbox({ checked, onChange, label }) {
+export default function Checkbox({ checked, onChange, label, labelElem }) {
     const id = useId();
 
     return (
@@ -33,7 +33,7 @@ export default function Checkbox({ checked, onChange, label }) {
                 </span>
             </span>
 
-            <span className="text-sm">{label}</span>
+            {labelElem ? labelElem : <span className="text-sm">{label}</span>}
         </label>
     );
 }

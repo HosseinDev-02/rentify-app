@@ -29,7 +29,7 @@ export default function Input({
                     </span>
                     <input
                         name={name}
-                        className={`w-full h-full pr-1 pl-8 font-IranSansWeb-Regular focus-visible:outline-0 placeholder:text-black ${
+                        className={`w-full h-full pr-1 pl-8 font-IranSansWeb-Regular focus-visible:outline-0 ${
                             resetIcon ? "pl-8" : "pl-2"
                         } ${className}`}
                         type={type}
