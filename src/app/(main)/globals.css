@@ -140,3 +140,19 @@ body {
     padding-inline: 1.75rem;
   }
 }
+/* 
+.mySwiper .swiper-button-prev {
+  @apply bg-neutral-400 text-black rounded-full h-8 w-8 flex items-center justify-center
+} */
+
+.swiper-button-disabled {
+  @apply text-neutral-400 pointer-events-none
+}
+
+.swiper-slide-prev img {
+  @apply rounded-r-xl
+}
+
+.swiper-slide-next img {
+  @apply rounded-l-xl
+}
