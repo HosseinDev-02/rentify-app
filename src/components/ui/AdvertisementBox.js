@@ -2,6 +2,7 @@ import { Heart, Map, MapPin } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import TomanIcon from "./icons/TomanIcon";
+import Link from "next/link";
 
 const setTypeStyle = (type) => {
     if (type === "خانه ویلایی") return "bg-[#D67114]";
@@ -18,7 +19,7 @@ export default function AdvertisementBox({
     rent,
 }) {
     return (
-        <div className="rounded-2xl overflow-hidden bg-white">
+        <Link href={'/advertisement-detail/adv-1'} className="rounded-2xl overflow-hidden bg-white">
             {/* ads image */}
             <div className="relative w-full h-54">
                 <span className="absolute top-4 right-4 w-6 h-6 rounded-full bg-[#FAFAFA] flex items-center justify-center">
@@ -80,6 +81,6 @@ export default function AdvertisementBox({
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 }

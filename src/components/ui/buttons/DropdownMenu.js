@@ -47,7 +47,9 @@ export default function DropdownMenu(props) {
             >
                 <div className="flex items-center justify-center gap-3">
                     <div className="flex items-center gap-1">
-                        <span className="hidden md:inline">{setTitleDesc(props.title)}</span>
+                        <span className="hidden md:inline">
+                            {setTitleDesc(props.title)}
+                        </span>
                         <span className="text-nowrap text-ellipsis">
                             {props.title}
                         </span>
@@ -72,17 +74,29 @@ export default function DropdownMenu(props) {
                         >
                             انتخاب کنید
                         </li>
-                        {items.map((item) => (
-                            <li
-                                onClick={() => {
-                                    setShow(false);
-                                    setSelectedItem(item.title);
-                                }}
-                                key={item.id}
-                            >
-                                {item.title}
-                            </li>
-                        ))}
+                        {props.items
+                            ? props.items.map((item) => (
+                                  <li
+                                      onClick={() => {
+                                          setShow(false);
+                                          setSelectedItem(item.title);
+                                      }}
+                                      key={item.id}
+                                  >
+                                      {item.title}
+                                  </li>
+                              ))
+                            : items.map((item) => (
+                                  <li
+                                      onClick={() => {
+                                          setShow(false);
+                                          setSelectedItem(item.title);
+                                      }}
+                                      key={item.id}
+                                  >
+                                      {item.title}
+                                  </li>
+                              ))}
                     </ul>
                 </div>
             )}

@@ -1,7 +1,8 @@
-"use client";
 import Header from "@/components/layout/Header";
 import AdvertisementBox from "@/components/ui/AdvertisementBox";
 import Checkbox from "@/components/ui/Checkbox";
+import DropdownMenu from "@/components/ui/buttons/DropdownMenu";
+// import DropdownMenu from "@/components/ui/buttons/DropdownMenu";
 import PrimaryButton from "@/components/ui/buttons/PrimaryButton";
 import BedroomCountFIlter from "@/components/ui/filtering/BedroomCountFIlter";
 import CityFilter from "@/components/ui/filtering/CityFilter";
@@ -9,11 +10,12 @@ import FilterProvider from "@/components/ui/filtering/FilterProvider";
 import FilteringWrapper from "@/components/ui/filtering/FilteringWrapper";
 import MortgageFilter from "@/components/ui/filtering/MortgageFilter";
 import RentFilter from "@/components/ui/filtering/RentFilter";
+import TypeLandDropdown from "@/components/ui/filtering/TypeLandDropdown";
 import TypeLandFIlter from "@/components/ui/filtering/TypeLandFIlter";
 import { adsItems, searchResults } from "@/utils/data";
 import { landTypes } from "@/utils/filters";
 import { Check, ChevronDown, Funnel, Search, XIcon } from "lucide-react";
-import React, { useState } from "react";
+import React from "react";
 
 export default function Advertisements() {
     return (
@@ -31,12 +33,10 @@ export default function Advertisements() {
                                 <Funnel size={20} />
                                 <span>فیلترها</span>
                             </button> */}
-                            <FilterProvider/>
+                            <FilterProvider />
                             <span className="block w-px h-10 bg-[#D7D8DA]"></span>
-                            <button className="bg-primary-tint-6 flex items-center justify-center gap-1 rounded-full py-2 px-3 text-sm text-primary">
-                                <span>آپارتمان</span>
-                                <ChevronDown size={20} />
-                            </button>
+                           <TypeLandDropdown/>
+                            {/* <DropdownMenu items={landTypes} defaultValue={'انتخاب کنید'} title={'آپارتمان'} /> */}
                         </div>
                     </div>
                 </div>
