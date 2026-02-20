@@ -4,6 +4,7 @@ import PrimaryButton from "@/components/ui/buttons/PrimaryButton";
 import TomanIcon from "@/components/ui/icons/TomanIcon";
 import { Share2 } from "lucide-react";
 import { MapPin } from "lucide-react";
+import { Flag } from "lucide-react";
 import { Clock } from "lucide-react";
 import { Heart } from "lucide-react";
 import { MessagesSquare } from "lucide-react";
@@ -20,9 +21,9 @@ export default function Page() {
                 className={"text-black!"}
             />
             {/* page content */}
-            <main className="pt-36 md:pt-47 min-h-screen">
+            <main className="min-h-screen bg-white pt-12">
                 {/* slider */}
-                <div className="mt-12">
+                <div className="">
                     <div className="container">
                         <GallerySlider />
                     </div>
@@ -30,15 +31,15 @@ export default function Page() {
                 {/* infos */}
                 <div className="mt-10">
                     <div className="container">
-                        <div className="grid grid-cols-12 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
                             {/* details */}
-                            <div className="col-span-8">
+                            <div className="md:col-span-7 lg:col-span-8">
                                 {/* title & location & price */}
                                 <div>
                                     {/* title & info */}
-                                    <div className="flex items-start justify-between">
+                                    <div className="flex flex-wrap gap-4 items-start justify-between">
                                         <div>
-                                            <h5 className="text-2xl">
+                                            <h5 className="text-xl md:text-2xl">
                                                 آپارتمان ۷۰ متری ۲ خوابه _ تهران
                                                 محمدیه
                                             </h5>
@@ -97,10 +98,21 @@ export default function Page() {
                                             </div>
                                         </div>
                                     </div>
+                                    {/* UID */}
+                                    <div className="flex items-center justify-between text-[#45484B] text-lg py-3 border-t border-t-[#D7D8DA] mt-6">
+                                        <div className="flex items-center gap-1">
+                                            <span>شناسه آگهی:</span>
+                                            <span>5436</span>
+                                        </div>
+                                        <Link className="flex items-center gap-1" href={'#'}>
+                                            <Flag size={16}/>
+                                            <span>گزارش</span>
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                             {/* real-estate infos */}
-                            <div className="col-span-4 p-6 border border-[#D7D8DA] rounded-[10px] flex flex-col items-center">
+                            <div className="md:col-span-5 lg:col-span-4 p-6 border border-[#D7D8DA] rounded-[10px] flex flex-col items-center">
                                 <div className="flex items-center gap-3">
                                     <Image
                                         alt="profile_image"

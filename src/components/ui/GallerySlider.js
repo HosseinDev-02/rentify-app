@@ -43,9 +43,22 @@ export default function GallerySlider() {
     return (
         <>
             <Swiper
-                slidesPerView={3}
                 spaceBetween={8}
                 freeMode={true}
+                breakpoints={{
+                    0: {
+                        slidesPerView: 1,
+                        centeredSlides: false
+                    },
+                    480: {
+                        slidesPerView: 2,
+                        centeredSlides: false
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        centeredSlides: true
+                    },
+                }}
                 loop
                 modules={[FreeMode, Navigation]}
                 className="mySwiper"

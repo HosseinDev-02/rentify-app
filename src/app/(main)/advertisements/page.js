@@ -24,7 +24,7 @@ export default function Advertisements() {
                 wrapperClassName={"rounded-2xl bg-white"}
                 className={"text-black!"}
             />
-            <main className="pt-36 md:pt-47">
+            <main className="">
                 {/* filtering menu */}
                 <div className="py-4 bg-white flex items-center">
                     <div className="container">

@@ -17,7 +17,6 @@ import { usePathname } from "next/navigation";
 
 export default function Header({ className, wrapperClassName }) {
     const pathname = usePathname();
-    console.log("pathname :", pathname);
     const [scrolled, setScrolled] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
 
