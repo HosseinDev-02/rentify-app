@@ -1,8 +1,18 @@
 import Header from "@/components/layout/Header";
+import AdvItemTitle from "@/components/ui/AdvItemTitle";
+import AdvNavigation from "@/components/ui/AdvNavigation";
+import AdvNavigationItem from "@/components/ui/AdvNavigationItem";
 import GallerySlider from "@/components/ui/GallerySlider";
 import PrimaryButton from "@/components/ui/buttons/PrimaryButton";
 import TomanIcon from "@/components/ui/icons/TomanIcon";
 import { Share2 } from "lucide-react";
+import { Dumbbell } from "lucide-react";
+import { WavesLadder } from "lucide-react";
+import { Zap } from "lucide-react";
+import { Rose } from "lucide-react";
+import { Volleyball } from "lucide-react";
+import { TreeDeciduous } from "lucide-react";
+import { DumbbellIcon } from "lucide-react";
 import { MapPin } from "lucide-react";
 import { Flag } from "lucide-react";
 import { Clock } from "lucide-react";
@@ -12,6 +22,81 @@ import { PhoneIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
+const mainInfos = [
+    {
+        id: 1,
+        title: "مساحت زیر بنا:",
+        value: "۱۳۰ متر",
+    },
+    {
+        id: 2,
+        title: "مساحت زمین:",
+        value: "۴۰۰ متر",
+    },
+    {
+        id: 3,
+        title: "طبقات:",
+        value: "۱۴",
+    },
+    {
+        id: 4,
+        title: "طبقه:",
+        value: "۱۴",
+    },
+    {
+        id: 5,
+        title: "خواب:",
+        value: "۲ خوابه",
+    },
+    {
+        id: 6,
+        title: "سرویس بهداشتی:",
+        value: "۳ عدد",
+    },
+    {
+        id: 7,
+        title: "هر طبقه:",
+        value: "1",
+    },
+];
+const featureInfos = [
+    {
+        id: 1,
+        icon: <Dumbbell className="text-[#353739]" size={24}/>,
+        value: 'باشگاه'
+    },
+    {
+        id: 2,
+        icon: <TreeDeciduous className="text-[#353739]" size={24}/>,
+        value: 'فضای سبز'
+    },
+    {
+        id: 3,
+        icon: <WavesLadder className="text-[#353739]" size={24}/>,
+        value: 'استخر سربوشیده'
+    },
+    {
+        id: 4,
+        icon: <WavesLadder className="text-[#353739]" size={24}/>,
+        value: 'سونا و جکوزی'
+    },
+    {
+        id: 5,
+        icon: <Volleyball className="text-[#353739]" size={24}/>,
+        value: 'زمین بازی'
+    },
+    {
+        id: 6,
+        icon: <Zap className="text-[#353739]" size={24}/>,
+        value: 'برق اضطراری'
+    },
+    {
+        id: 7,
+        icon: <Rose className="text-[#353739]" size={24}/>,
+        value: 'روف گاردن'
+    },
+];
 
 export default function Page() {
     return (
@@ -34,7 +119,7 @@ export default function Page() {
                         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
                             {/* details */}
                             <div className="md:col-span-7 lg:col-span-8">
-                                {/* title & location & price */}
+                                {/* title & location & price & UUid */}
                                 <div>
                                     {/* title & info */}
                                     <div className="flex flex-wrap gap-4 items-start justify-between">
@@ -104,10 +189,41 @@ export default function Page() {
                                             <span>شناسه آگهی:</span>
                                             <span>5436</span>
                                         </div>
-                                        <Link className="flex items-center gap-1" href={'#'}>
-                                            <Flag size={16}/>
+                                        <Link
+                                            className="flex items-center gap-1"
+                                            href={"#"}
+                                        >
+                                            <Flag size={16} />
                                             <span>گزارش</span>
                                         </Link>
+                                    </div>
+                                </div>
+                                {/* infos navigation */}
+                                <AdvNavigation />
+                                {/* main infos */}
+                                <div className="mt-8 pb-8 border-b border-b-[#D7D8DA]">
+                                    <AdvItemTitle title={"اطلاعات اصلی"} />
+                                    <div className="mt-10 grid grid-cols-3 gap-y-8">
+                                        {mainInfos.map((item) => (
+                                            <AdvNavigationItem
+                                                key={item.id}
+                                                label={item.title}
+                                                value={item.value}
+                                            />
+                                        ))}
+                                    </div>
+                                </div>
+                                {/* features */}
+                                <div className="mt-8 pb-8 border-b border-b-[#D7D8DA]">
+                                    <AdvItemTitle title={"تجهیزات و امکانات"} />
+                                    <div className="mt-10 grid grid-cols-3 gap-y-8">
+                                        {featureInfos.map((item) => (
+                                            <AdvNavigationItem
+                                                key={item.id}
+                                                icon={item.icon}
+                                                value={item.value}
+                                            />
+                                        ))}
                                     </div>
                                 </div>
                             </div>
