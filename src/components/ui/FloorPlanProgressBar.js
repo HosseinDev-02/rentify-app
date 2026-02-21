@@ -8,7 +8,7 @@ export default function FloorPlanProgressBar({ title, value, rate }) {
             <div className='w-46 bg-white h-1 rounded-md overflow-hidden'>
                 <div style={{ width: `${value}%` }} className='bg-primary-shade-2 h-full float-left'></div>
             </div>
-            <span>{rate}</span>
+            <div className='font-IranSansWeb-Regular'>{rate}/10</div>
         </div>
     </div>
   )

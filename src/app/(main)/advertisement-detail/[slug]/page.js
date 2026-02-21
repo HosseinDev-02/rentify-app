@@ -1,15 +1,23 @@
 import Header from "@/components/layout/Header";
+import AdvDetailFeatures from "@/components/ui/AdvDetailFeatures";
+import AdvDetailProvider from "@/components/ui/AdvDetailProvider";
 import AdvItemTitle from "@/components/ui/AdvItemTitle";
 import AdvNavigation from "@/components/ui/AdvNavigation";
 import AdvNavigationItem from "@/components/ui/AdvNavigationItem";
+import AdvertisementBox from "@/components/ui/AdvertisementBox";
+import CopyButton from "@/components/ui/CopyBtn";
 import FloorPlanNavigation from "@/components/ui/FloorPlanNavigation";
 import FloorPlanProgressBar from "@/components/ui/FloorPlanProgressBar";
 import GallerySlider from "@/components/ui/GallerySlider";
 import PrimaryButton from "@/components/ui/buttons/PrimaryButton";
+import PaymentIcon from "@/components/ui/icons/PaymentIcon";
 import TomanIcon from "@/components/ui/icons/TomanIcon";
+import { adsItems } from "@/utils/data";
 import { Share2 } from "lucide-react";
 import { Dumbbell } from "lucide-react";
 import { WavesLadder } from "lucide-react";
+import { Copy } from "lucide-react";
+import { ChevronsLeft } from "lucide-react";
 import { Zap } from "lucide-react";
 import { Pin } from "lucide-react";
 import { MoveLeft } from "lucide-react";
@@ -126,9 +134,9 @@ export default function Page() {
                 {/* infos */}
                 <div className="mt-10">
                     <div className="container">
-                        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
                             {/* details */}
-                            <div className="md:col-span-7 lg:col-span-8">
+                            <div className="md:col-span-7 lg:col-span-8 mb-14">
                                 {/* title & location & price & UUid */}
                                 <div>
                                     {/* title & info */}
@@ -213,7 +221,7 @@ export default function Page() {
                                 {/* main infos */}
                                 <div className="mt-8 pb-8 border-b border-b-[#D7D8DA]">
                                     <AdvItemTitle title={"اطلاعات اصلی"} />
-                                    <div className="mt-10 grid grid-cols-3 gap-y-8">
+                                    <div className="mt-10 grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-y-8">
                                         {mainInfos.map((item) => (
                                             <AdvNavigationItem
                                                 key={item.id}
@@ -226,7 +234,7 @@ export default function Page() {
                                 {/* features */}
                                 <div className="mt-8 pb-8 border-b border-b-[#D7D8DA]">
                                     <AdvItemTitle title={"تجهیزات و امکانات"} />
-                                    <div className="mt-10 grid grid-cols-3 gap-y-8">
+                                    <div className="mt-10 grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-y-8">
                                         {featureInfos.map((item) => (
                                             <AdvNavigationItem
                                                 key={item.id}
@@ -269,27 +277,73 @@ export default function Page() {
                                 <div className="mt-8 pb-8 border-b border-b-[#D7D8DA]">
                                     <AdvItemTitle title={"موقعیت مکانی"} />
                                     <div className="mt-12">
-                                        {/* navigation */}
-                                        <div className="flex justify-between items-center">
-                                            <FloorPlanNavigation />
-                                            <Link
-                                                className="flex items-center justify-center rounded-lg border border-[#C4C4C4] gap-2 px-6 h-12 text-primary"
-                                                href={"#"}
-                                            >
-                                                <MapPin size={24} />
-                                                <span className="text-lg font-IranYekan-Medium">
-                                                    مشاهده نقشه
+                                        <AdvDetailProvider>
+                                            {/* navigation */}
+                                            <div className="flex justify-between items-center flex-wrap gap-8">
+                                                <FloorPlanNavigation />
+                                                <Link
+                                                    className="flex items-center justify-center rounded-lg border border-[#C4C4C4] gap-2 px-6 h-12 text-primary"
+                                                    href={"#"}
+                                                >
+                                                    <MapPin size={24} />
+                                                    <span className="text-lg font-IranYekan-Medium">
+                                                        مشاهده نقشه
+                                                    </span>
+                                                </Link>
+                                            </div>
+                                            {/* items */}
+                                            <AdvDetailFeatures />
+                                        </AdvDetailProvider>
+                                    </div>
+                                </div>
+                                {/* Video */}
+                                <div className="mt-8 pb-8 border-b border-b-[#D7D8DA]">
+                                    <AdvItemTitle title={"تور مجازی"} />
+                                    <div className="mt-12"></div>
+                                </div>
+                                {/* payment */}
+                                <div className="mt-6">
+                                    <div className="flex items-center justify-between flex-wrap gap-8">
+                                        <div className="flex items-center gap-3">
+                                            <div className="flex items-center justify-center w-19 h-18.5 border border-[#989BA0] rounded-xl">
+                                                <PaymentIcon />
+                                            </div>
+                                            <div className="flex flex-col items-start gap-1">
+                                                <span className="text-xl">
+                                                    پرداخت امن با تومن
                                                 </span>
-                                            </Link>
+                                                <span className="text-xs font-IranYekan-Light text-[#7E8288]">
+                                                    ضامن امنیت معامله‌ی شما
+                                                </span>
+                                            </div>
                                         </div>
-                                        {/* items */}
-                                        <div className="flex flex-col gap-6 mt-10">
-                                            <FloorPlanProgressBar
-                                                title={"پارک"}
-                                                value={64}
-                                                rate={"۶.۰/۱۰"}
-                                            />
-                                        </div>
+                                        <ChevronsLeft
+                                            className="text-[#989BA0]"
+                                            size={24}
+                                            strokeWidth={3}
+                                        />
+                                        <Link
+                                            className="flex items-center justify-center rounded-lg border border-primary px-8 h-14 text-primary"
+                                            href={"#"}
+                                        >
+                                            <span className="text-lg font-IranYekan-Medium">
+                                                پرداخت ودیعه
+                                            </span>
+                                        </Link>
+                                    </div>
+                                    {/* text */}
+                                    <p className="text-sm font-IranYekan-Light text-[#73767C] mt-2">
+                                        مبلغ پرداختی نزد تومن به امانت باقی
+                                        می‌ماند و پس از ارسال کالا و تایید کالا،
+                                        مبلغ به حساب فروشنده واریز می‌شود.
+                                    </p>
+                                    {/* offer */}
+                                    <div className="rounded-lg border-2 border-dashed border-primary-shade-1 min-h-20 bg-primary-tint-6 mt-8 px-4 py-2 lg:py-0 flex flex-col lg:flex-row items-center justify-between flex-wrap gap-8">
+                                        <span className="text-primary-shade-1 text-xl text-center md:text-right">
+                                            کد تخفیف ۲۰۰‌هزار تومانی در اولین
+                                            خرید
+                                        </span>
+                                        <CopyButton />
                                     </div>
                                 </div>
                             </div>
@@ -337,6 +391,30 @@ export default function Page() {
                                     title={"درخواست بازدید"}
                                 />
                             </div>
+                        </div>
+                    </div>
+                </div>
+                {/* wrapper */}
+                <div className="bg-[#F6F6F6] pb-18 pt-10">
+                    <div className="container">
+                        {/* section header */}
+                        <div className="flex items-center justify-between">
+                            <h3 className="text-xl md:text-2xl font-IranYekan-ExtraBold">
+                            خانه هایی با ارزش مشابه
+                            </h3>
+                            <Link
+                                className="flex items-center gap-2 text-primary font-IranYekan-Medium"
+                                href={"#"}
+                            >
+                                <span><span className="hidden md:inline">مشاهده</span> همه</span>
+                                <MoveLeft size={20} />
+                            </Link>
+                        </div>
+                        {/* content */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10">
+                            {adsItems.slice(0, 4).map((item) => (
+                                <AdvertisementBox key={item.id} {...item} />
+                            ))}
                         </div>
                     </div>
                 </div>

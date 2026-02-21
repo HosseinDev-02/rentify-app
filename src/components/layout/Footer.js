@@ -13,7 +13,7 @@ import FooterMenu from "../ui/FooterMenu";
 
 export default function Footer() {
     return (
-        <footer className="p-14 bg-white">
+        <footer className="py-14 bg-white">
             {/* footer container */}
             <div className="container">
                 {/* footer content */}
