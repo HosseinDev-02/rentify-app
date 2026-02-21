@@ -2,6 +2,8 @@ import Header from "@/components/layout/Header";
 import AdvItemTitle from "@/components/ui/AdvItemTitle";
 import AdvNavigation from "@/components/ui/AdvNavigation";
 import AdvNavigationItem from "@/components/ui/AdvNavigationItem";
+import FloorPlanNavigation from "@/components/ui/FloorPlanNavigation";
+import FloorPlanProgressBar from "@/components/ui/FloorPlanProgressBar";
 import GallerySlider from "@/components/ui/GallerySlider";
 import PrimaryButton from "@/components/ui/buttons/PrimaryButton";
 import TomanIcon from "@/components/ui/icons/TomanIcon";
@@ -9,6 +11,8 @@ import { Share2 } from "lucide-react";
 import { Dumbbell } from "lucide-react";
 import { WavesLadder } from "lucide-react";
 import { Zap } from "lucide-react";
+import { Pin } from "lucide-react";
+import { MoveLeft } from "lucide-react";
 import { Rose } from "lucide-react";
 import { Volleyball } from "lucide-react";
 import { TreeDeciduous } from "lucide-react";
@@ -63,39 +67,45 @@ const mainInfos = [
 const featureInfos = [
     {
         id: 1,
-        icon: <Dumbbell className="text-[#353739]" size={24}/>,
-        value: 'باشگاه'
+        icon: <Dumbbell className="text-[#353739]" size={24} />,
+        value: "باشگاه",
     },
     {
         id: 2,
-        icon: <TreeDeciduous className="text-[#353739]" size={24}/>,
-        value: 'فضای سبز'
+        icon: <TreeDeciduous className="text-[#353739]" size={24} />,
+        value: "فضای سبز",
     },
     {
         id: 3,
-        icon: <WavesLadder className="text-[#353739]" size={24}/>,
-        value: 'استخر سربوشیده'
+        icon: <WavesLadder className="text-[#353739]" size={24} />,
+        value: "استخر سربوشیده",
     },
     {
         id: 4,
-        icon: <WavesLadder className="text-[#353739]" size={24}/>,
-        value: 'سونا و جکوزی'
+        icon: <WavesLadder className="text-[#353739]" size={24} />,
+        value: "سونا و جکوزی",
     },
     {
         id: 5,
-        icon: <Volleyball className="text-[#353739]" size={24}/>,
-        value: 'زمین بازی'
+        icon: <Volleyball className="text-[#353739]" size={24} />,
+        value: "زمین بازی",
     },
     {
         id: 6,
-        icon: <Zap className="text-[#353739]" size={24}/>,
-        value: 'برق اضطراری'
+        icon: <Zap className="text-[#353739]" size={24} />,
+        value: "برق اضطراری",
     },
     {
         id: 7,
-        icon: <Rose className="text-[#353739]" size={24}/>,
-        value: 'روف گاردن'
+        icon: <Rose className="text-[#353739]" size={24} />,
+        value: "روف گاردن",
     },
+];
+const descriptions = [
+    "سند شخصی",
+    "واحد شمالی",
+    "هود و گاز رو میزی",
+    "کابینت ممبران",
 ];
 
 export default function Page() {
@@ -106,7 +116,7 @@ export default function Page() {
                 className={"text-black!"}
             />
             {/* page content */}
-            <main className="min-h-screen bg-white pt-12">
+            <main className="min-h-screen bg-white pt-12 mt-36 md:mt-47">
                 {/* slider */}
                 <div className="">
                     <div className="container">
@@ -224,6 +234,62 @@ export default function Page() {
                                                 value={item.value}
                                             />
                                         ))}
+                                    </div>
+                                </div>
+                                {/* descriptions */}
+                                <div className="mt-8 pb-8 border-b border-b-[#D7D8DA]">
+                                    <AdvItemTitle title={"توضیحات"} />
+                                    <div className="flex flex-col gap-4 text-xl text-[#353739] mt-12">
+                                        {descriptions.map((item) => (
+                                            <span key={item}>{item}</span>
+                                        ))}
+                                    </div>
+                                    <button
+                                        className="flex items-center gap-2 text-primary mt-5 cursor-pointer"
+                                        type="button"
+                                    >
+                                        <span>نمایش بیشتر</span>
+                                        <MoveLeft size={16} />
+                                    </button>
+                                </div>
+                                {/* floor plan */}
+                                <div className="mt-8 pb-8 border-b border-b-[#D7D8DA]">
+                                    <AdvItemTitle title={"نقشه طبقات"} />
+                                    <div className="mt-12">
+                                        <Image
+                                            src={"/images/floor-plan.png"}
+                                            alt="floor_plan"
+                                            width={808}
+                                            height={488}
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                </div>
+                                {/* location */}
+                                <div className="mt-8 pb-8 border-b border-b-[#D7D8DA]">
+                                    <AdvItemTitle title={"موقعیت مکانی"} />
+                                    <div className="mt-12">
+                                        {/* navigation */}
+                                        <div className="flex justify-between items-center">
+                                            <FloorPlanNavigation />
+                                            <Link
+                                                className="flex items-center justify-center rounded-lg border border-[#C4C4C4] gap-2 px-6 h-12 text-primary"
+                                                href={"#"}
+                                            >
+                                                <MapPin size={24} />
+                                                <span className="text-lg font-IranYekan-Medium">
+                                                    مشاهده نقشه
+                                                </span>
+                                            </Link>
+                                        </div>
+                                        {/* items */}
+                                        <div className="flex flex-col gap-6 mt-10">
+                                            <FloorPlanProgressBar
+                                                title={"پارک"}
+                                                value={64}
+                                                rate={"۶.۰/۱۰"}
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -24,19 +24,14 @@ export default function Advertisements() {
                 wrapperClassName={"rounded-2xl bg-white"}
                 className={"text-black!"}
             />
-            <main className="">
+            <main className="pt-36 md:pt-47">
                 {/* filtering menu */}
                 <div className="py-4 bg-white flex items-center">
                     <div className="container">
                         <div className="inline-flex items-center gap-4">
-                            {/* <button className="border border-[#D7D8DA] flex items-center justify-center gap-1 rounded-full py-2 px-3 text-sm text-primary">
-                                <Funnel size={20} />
-                                <span>فیلترها</span>
-                            </button> */}
                             <FilterProvider />
                             <span className="block w-px h-10 bg-[#D7D8DA]"></span>
-                           <TypeLandDropdown/>
-                            {/* <DropdownMenu items={landTypes} defaultValue={'انتخاب کنید'} title={'آپارتمان'} /> */}
+                            <TypeLandDropdown />
                         </div>
                     </div>
                 </div>
