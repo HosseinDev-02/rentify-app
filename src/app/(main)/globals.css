@@ -201,3 +201,7 @@ body {
 .rmdp-day-picker div .rmdp-week:first-child .rmdp-week-day {
   @apply bg-white!;
 }
+
+.rmdp-day.rmdp-deactive {
+  @apply bg-white! text-[#C4C4C4]!;
+}
