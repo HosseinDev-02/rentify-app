@@ -7,9 +7,9 @@ import DateObject from "react-date-object";
 
 const weekDays = ["ش", "ی", "د", "س", "چ", "پ", "ج"];
 
-export default function MyDatePicker() {
+export default function MyCalendar() {
     return (
-        <div className="" style={{ direction: "rtl" }}>
+        <div className="z-50" style={{ direction: "rtl" }}>
             <Calendar
                 className=""
                 weekDays={weekDays}
