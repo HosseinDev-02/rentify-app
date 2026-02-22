@@ -9,12 +9,14 @@ import CopyButton from "@/components/ui/CopyBtn";
 import FloorPlanNavigation from "@/components/ui/FloorPlanNavigation";
 import FloorPlanProgressBar from "@/components/ui/FloorPlanProgressBar";
 import GallerySlider from "@/components/ui/GallerySlider";
+import MyDatePicker from "@/components/ui/auth/MyDatePicker";
 import PrimaryButton from "@/components/ui/buttons/PrimaryButton";
 import PaymentIcon from "@/components/ui/icons/PaymentIcon";
 import TomanIcon from "@/components/ui/icons/TomanIcon";
 import { adsItems } from "@/utils/data";
 import { Share2 } from "lucide-react";
 import { Dumbbell } from "lucide-react";
+import { XIcon } from "lucide-react";
 import { WavesLadder } from "lucide-react";
 import { Copy } from "lucide-react";
 import { ChevronsLeft } from "lucide-react";
@@ -419,6 +421,22 @@ export default function Page() {
                     </div>
                 </div>
             </main>
+            {/* Date Picker For Visit */}
+            <div className="fixed inset-0 m-auto z-50 flex items-center justify-center bg-black/60">
+                <div className="w-290 pt-12 px-20 pb-26 bg-[#F6F6F6] rounded-2xl">
+                    {/* header */}
+                    <div className="flex items-center justify-between rounded-2xl bg-white px-6 py-8 mb-10">
+                        <h3 className="font-IranYekan-ExtraBold text-3xl">
+                            درخواست بازدید
+                        </h3>
+                        <span>
+                            <XIcon size={24}/>
+                        </span>
+                    </div>
+                    {/* datepicker */}
+                    <MyDatePicker />
+                </div>
+            </div>
         </>
     );
 }

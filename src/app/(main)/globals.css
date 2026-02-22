@@ -156,3 +156,48 @@ body {
 .swiper-slide-next img {
   @apply rounded-l-xl
 }
+
+/* calendar */
+
+.rmdp-header-values {
+  @apply font-IranYekan-Bold text-lg;
+}
+
+.rmdp-arrow {
+  @apply border-black!;
+}
+
+.rmdp-calendar {
+  @apply p-6!;
+}
+
+.rmdp-wrapper {
+ @apply rounded-2xl!;
+}
+
+.rmdp-header {
+  @apply pt-0! mt-0! pb-5! border-b border-b-[#D7D8DA] mb-3!;
+}
+
+.rmdp-week-day {
+  @apply text-[#45484B]! font-IranYekan-Medium!;
+}
+
+.rmdp-day, .rmdp-week-day {
+  @apply w-12! h-12! bg-[#FAFAFA] rounded-full!;
+}
+
+.rmdp-week, .rmdp-ym {
+  @apply gap-3!;
+}
+
+.rmdp-day-picker div .rmdp-week:not(:first-child) {
+  @apply mt-3!;
+}
+
+.rmdp-day-picker div .rmdp-week:first-child {
+  @apply pb-3!;
+}
+.rmdp-day-picker div .rmdp-week:first-child .rmdp-week-day {
+  @apply bg-white!;
+}
